@@ -15,6 +15,13 @@ class TicTacToe
   end
 
   def draw?
+    if full?
+        if !won?
+          return true
+        end
+    else #board is not full
+      return false
+    end  #board is not full and not won
   end
 
   def full?
