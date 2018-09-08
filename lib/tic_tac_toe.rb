@@ -90,7 +90,13 @@ end #end won?
     puts(" ")
   end
 
-  def input_to_index
+  def input_to_index(input)
+    if index == -1
+      puts "Invalid entry."
+    elsif !valid_move?(index)
+      puts "Space taken. Choose again."
+      index = -1
+    end
   end
 
   def move
