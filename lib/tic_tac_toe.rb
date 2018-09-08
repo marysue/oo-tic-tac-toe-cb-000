@@ -54,7 +54,6 @@ class TicTacToe
     end
   end
 
-
   def valid_move?
     puts "valid_move?  board:  #{board}"
     puts "valid_move?  index:  #{index}"
@@ -62,31 +61,21 @@ class TicTacToe
     return (index.between?(0,8) && !position_taken?(board, index))
   end
 
-  def won?
-    #won? : returns winning combination or false if no winning comb
-    #for each row, column and diagnonal combination
-    WIN_COMBINATIONS.each do | win_combination |
-      #grab the winning combination of indices we are looking for
-      win_index_1 = win_combination[0]
-      win_index_2 = win_combination[1]
+  def won?  
+    WIN_COMBINATIONS.each do | win_combination |    #won? : returns winning combination or false if no winning comb
+      win_index_1 = win_combination[0] #grab the winning combination of indices we are looking for
+      win_index_2 = win_combination[1] #for each row, column and diagnonal combination
       win_index_3 = win_combination[2]
-
-      #extract the value of these winning indices from the board
-      position_1 = @board[win_index_1]
+      position_1 = @board[win_index_1] #extract the value of these winning indices from the board
       position_2 = @board[win_index_2]
       position_3 = @board[win_index_3]
-
-      #check if either team has won
       if (position_1 == "X" && position_2 == "X" && position_3 == "X") ||
          (position_1 == "O" && position_2 == "O" && position_3 == "O")
-         #we break out of here if we have a winning row, col, or diagnonal
-         return win_combination
+         return win_combination #check if either team has won
       end #end if
   end #end do while
-  #if we get here there were no winning combinations
-  return false
+  return false #if we get here there were no winning combinations
 end #end won?
-
 
   def current_player
     # board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
@@ -122,9 +111,7 @@ end #end won?
     end
   end
 
-  def move(index)
-  #assumes position_taken? = no, and valid_move? = yes, and index is valid
-    #maybe problem here - current player is a method
+  def move(index)   #assumes position_taken? = no, and valid_move? = yes, and index is valid
       @board[index] = current_player
   end
 
