@@ -42,7 +42,7 @@ class TicTacToe
   def won?
     #won? : returns winning combination or false if no winning comb
     #for each row, column and diagnonal combination
-    @WIN_COMBINATIONS.each do | win_combination |
+    WIN_COMBINATIONS.each do | win_combination |
       #grab the winning combination of indices we are looking for
       win_index_1 = win_combination[0]
       win_index_2 = win_combination[1]
@@ -145,10 +145,10 @@ end #end won?
       puts "Choose position [1-9]:  "
       input = gets
       #puts " "
-      index = @input_to_index(input)
+      index = input_to_index(input)
       if index == -1
         puts "Invalid entry."
-      elsif !@valid_move?(index)
+      elsif !valid_move?(index)
         puts "Space taken. Choose again."
         index = -1
       end
