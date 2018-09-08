@@ -9,20 +9,20 @@ class TicTacToe
                         [0,4,8],
                         [2,4,6]
   ]
-  
+
   def initialize
     @board - [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
 
   def draw?
   end
-  
+
   def full?
   end
 
   def over?
   end
-  
+
   def position_taken?
   end
 
@@ -31,11 +31,11 @@ class TicTacToe
 
   def won?
   end
-  
+
 
   def current_player
   end
-  
+
   def display_board
   end
 
@@ -47,7 +47,7 @@ class TicTacToe
 
   def play
   end
-  
+
   def turn_count
   end
 
@@ -56,7 +56,7 @@ class TicTacToe
 
   def winner
   end
-  
-  
-  
+
+
+
 end
