@@ -161,6 +161,8 @@ end #end won?
         index = -1
       end
     end
+    move(index)
+    success = true
   end
 
   def winner
