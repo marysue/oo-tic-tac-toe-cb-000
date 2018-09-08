@@ -60,11 +60,24 @@ class TicTacToe
          return win_combination
       end #end if
   end #end do while
+  #if we get here there were no winning combinations
   return false
 end #end won?
 
 
   def current_player
+    # board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
+    #  returns current player = 'X' for first move
+    #  returns current player = 'Y' for second move
+    count = turn_count
+    if count % 2 == 0
+      puts "count = #{count}, player = 'X'"
+      player = 'X'
+    else
+      puts "count = #{count}, player = 'O'"
+      player = 'O'
+    end
+    return player
   end
 
   def display_board
