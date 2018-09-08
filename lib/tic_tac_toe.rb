@@ -11,7 +11,7 @@ class TicTacToe
   ]
 
   def initialize
-    @board - [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
 
   def draw?
@@ -61,7 +61,7 @@ class TicTacToe
     return (index.between?(0,8) && !position_taken?(board, index))
   end
 
-  def won?  
+  def won?
     WIN_COMBINATIONS.each do | win_combination |    #won? : returns winning combination or false if no winning comb
       win_index_1 = win_combination[0] #grab the winning combination of indices we are looking for
       win_index_2 = win_combination[1] #for each row, column and diagnonal combination
