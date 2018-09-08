@@ -56,6 +56,10 @@ class TicTacToe
 
 
   def valid_move?
+    puts "valid_move?  board:  #{board}"
+    puts "valid_move?  index:  #{index}"
+
+    return (index.between?(0,8) && !position_taken?(board, index))
   end
 
   def won?
@@ -174,7 +178,7 @@ end #end won?
   end
 
   def winner
-    win_array = won?(@board)
+    win_array = won?
 
     if !win_array
       return nil
