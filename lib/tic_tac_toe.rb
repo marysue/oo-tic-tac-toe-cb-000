@@ -99,19 +99,71 @@ end #end won?
     end
   end
 
-  def move
+  def move(index)
+  #assumes position_taken? = no, and valid_move? = yes, and index is valid
+    #maybe problem here - current player is a method
+      @board[index] = @current_player
   end
 
   def play
+    iter = 1
+    while iter <= 9 && !@over?
+      puts "play:  iter = #{iter}"
+      success = @turn
+      @display_board
+      if success
+        iter += 1
+      end
+    end
+    #so iter is either at 9, or we've won.
+    if draw?
+      puts "Cat's Game!"
+    else
+      puts "Congratulations #{winner}!"
+    end
   end
 
   def turn_count
+    count = 0
+    @board.each do | entry |
+      if entry == "O" || entry == "X"
+        count += 1
+      end
+    end
+    puts "turn_count:  #{@board}"
+    puts "turn_count: #{count}"
+    return count
   end
 
   def turn
+    token = 'X'
+    #input = get_input(token)
+    index = -1
+
+    #while !index.between(0,8)
+    while !index.between?(0,8)
+      puts "Choose position [1-9]:  "
+      input = gets
+      #puts " "
+      index = @input_to_index(input)
+      if index == -1
+        puts "Invalid entry."
+      elsif !@valid_move?(index)
+        puts "Space taken. Choose again."
+        index = -1
+      end
   end
 
   def winner
+    win_array = won?(@board)
+
+    if !win_array
+      return nil
+    elsif @board[win_array[0]] == "X"
+      return "X"
+    elsif @board[win_array[0]] == "O"
+      return "O"
+    end
   end
 
 
