@@ -25,6 +25,13 @@ class TicTacToe
   end
 
   def full?
+    board.each do | entry |
+      if (entry == " " || entry == nil)
+        return false
+      end
+    end
+    #if we make it here, no elements on the board are empty
+    return true
   end
 
   def over?
