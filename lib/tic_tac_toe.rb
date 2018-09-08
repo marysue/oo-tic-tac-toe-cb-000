@@ -107,10 +107,10 @@ end #end won?
 
   def play
     iter = 1
-    while iter <= 9 && !@over?
+    while iter <= 9 && !over?
       puts "play:  iter = #{iter}"
-      success = @turn
-      @display_board
+      success = turn
+      display_board
       if success
         iter += 1
       end
