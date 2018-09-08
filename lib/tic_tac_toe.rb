@@ -54,7 +54,7 @@ class TicTacToe
     end
   end
 
-  def valid_move?
+  def valid_move?(index)
     puts "valid_move?  board:  #{@board}"
     puts "valid_move?  index:  #{index}"
 
@@ -147,11 +147,7 @@ end #end won?
   end
 
   def turn
-    token = 'X'
-    #input = get_input(token)
     index = -1
-
-    #while !index.between(0,8)
     while !index.between?(0,8)
       puts "Choose position [1-9]:  "
       input = gets
