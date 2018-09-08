@@ -45,7 +45,7 @@ class TicTacToe
   def position_taken?(index)
     if (@board[index] == 'X' || @board[index] == 'O')
       puts "position_taken:  returning true"
-      puts "position_taken?:  #{board}"
+      puts "position_taken?:  #{@board}"
       puts "position_taken?:  #{index}"
       return true
     else
@@ -55,10 +55,10 @@ class TicTacToe
   end
 
   def valid_move?
-    puts "valid_move?  board:  #{board}"
+    puts "valid_move?  board:  #{@board}"
     puts "valid_move?  index:  #{index}"
 
-    return (index.between?(0,8) && !position_taken?(board, index))
+    return (index.between?(0,8) && !position_taken?(index))
   end
 
   def won?
@@ -162,6 +162,7 @@ end #end won?
         puts "Space taken. Choose again."
         index = -1
       end
+    end
   end
 
   def winner
