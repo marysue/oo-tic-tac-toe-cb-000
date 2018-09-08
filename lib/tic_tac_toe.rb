@@ -23,8 +23,18 @@ class TicTacToe
   def over?
   end
 
-  def position_taken?
+  def position_taken?(index)
+    if (@board[index] == 'X' || @board[index] == 'O')
+      puts "position_taken:  returning true"
+      puts "position_taken?:  #{board}"
+      puts "position_taken?:  #{index}"
+      return true
+    else
+      puts "position_taken?:  returning false."
+      return false
+    end
   end
+
 
   def valid_move?
   end
