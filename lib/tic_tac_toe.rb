@@ -102,7 +102,7 @@ end #end won?
   def move(index)
   #assumes position_taken? = no, and valid_move? = yes, and index is valid
     #maybe problem here - current player is a method
-      @board[index] = @current_player
+      @board[index] = current_player
   end
 
   def play
